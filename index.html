@@ -4,83 +4,112 @@
         <meta charset="UTF-8">
         <title>EPUB Book Cover Creator</title>
         <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
     </head>
     <body>
+
         <header>
             <h1>EPUB Book Cover Creator</h1>
-            <p>Enter the book title and author, select a font and adjust the settings to create a custom book cover.</p>
         </header>
-        <main>
-            <div class="parameters">
+
+
+        <div id="content">
+            <section id="params">
                 <form>
-                    <label for="image">Image:</label>
-                    <input type="file" id="image" accept="image/*"><br>
-                    <label for="title">Title:</label>
-                    <input type="text" id="title"><br>
-                    <label for="author">Author:</label>
-                    <input type="text" id="author"><br>
-                    <label for="font">Font:</label>
-                    <input type="text" id="font" list="font-list"><br>
-                    <datalist id="font-list">
-                        <option value="Arial">
-                        <option value="Droid Sans Regular">
-                        <option value="Fira Sans">
-                        <option value="Cantarell Regular">
-                        <option value="Comfortaa Regular">
-                        <option value="Times New Roman">
-                    </datalist>
-                    <label for="shadow-color">Shadow Color:</label>
+                    <p>
+                        <h2>Cover Image</h2>
+                        <details>
+                            <summary>Recommendations for Amazon Kindle</summary>
+                            - The minimum image size allowed is 1,000 x 625 pixels.<br>
+                            - The maximum image size allowed is 10,000 x 10,000 pixels.<br>
+                            - The image file size should be 50MB or smaller.<br>
+                            <a href="https://kdp.amazon.com/en_US/help/topic/G6GTK3T3NUHKLEFX" rel="noopener" target="_blank">More information</a>
+                        </details>
+                        <p><label for="image">Select an image to work with.</label> <br>
+                        <input type="file" id="image" accept="image/*">
+                        </p>
+                    </p>
+
+
+
+                    <p><h2>Book's Title</h2>
+                        <label for="title">Title:</label>
+                        <input type="text" id="title">
+                    
+                        <label for="title-font-size">Size:</label>
+                        <input type="number" id="title-font-size" value="48" class="font-size">
+
+                        <p>
+                        <label for="title-x">Title Horizontal Position:</label><br>
+                        ⬅️ <input type="range" id="title-x" min="0" max="100" value="50"> ➡️ <span id="title-x-value">50</span><br>
+                        <label for="title-y">Title Vertical Position:</label><br>
+                        ⬆️ <input type="range" id="title-y" min="0" max="100" value="50"> ⬇️ <span id="title-y-value">50</span>
+                        </p>
+                    </p>
+
+            
+                    <p><h2>Book's Author</h2>
+                        <label for="author">Author:</label>
+                        <input type="text" id="author">
+                    
+                        <label for="author-font-size">Size:</label>
+                        <input type="number" id="author-font-size" value="24" class="font-size">
+
+                        <p>
+                            <label for="author-x">Author Horizontal Position:</label><br>
+                            ⬅️ <input type="range" id="author-x" min="0" max="100" value="50"> ➡️ <span id="author-x-value">50</span><br>
+                            <label for="author-y">Author Vertical Position:</label><br>
+                            ⬆️ <input type="range" id="author-y" min="0" max="100" value="70"> ⬇️ <span id="author-y-value">70</span>
+                        </p>
+
+                    </p>
+            
+                    <p><h2>Customize Font and Colors</h2>
+                        <label for="font">Font:</label>
+                        <select id="font">
+                            <option value="Arial" style="font-family: 'Arial';">Arial</option>
+                            <option value="Cantarell Regular" style="font-family: 'Cantarell Regular';">Cantarell Regular</option>
+                            <option value="Comfortaa Regular" style="font-family: 'Comfortaa Regular';">Comfortaa Regular</option>
+                            <option value="Crimson Roman" style="font-family: 'Crimson Roman';">Crimson Roman</option>
+                            <option value="Droid Sans Regular" style="font-family: 'Droid Sans Regular';" selected>Droid Sans Regular</option>
+                        </select>
+                    </p>
+                    
+                    <p><label for="font-color">Font Color:</label>
+                    <input type="color" id="font-color" value="#ffffff"></p>
+                    
+                    <p><label for="shadow-color">Shadow Color:</label>
                     <input type="color" id="shadow-color" value="#000000"><br>
+            
                     <label for="shadow-blur">Shadow Blur:</label>
                     <input type="range" id="shadow-blur" min="0" max="20" value="10"><br>
+            
                     <label for="shadow-offset-x">Shadow Offset X:</label>
                     <input type="range" id="shadow-offset-x" min="-20" max="20" value="5"><br>
+            
                     <label for="shadow-offset-y">Shadow Offset Y:</label>
-                    <input type="range" id="shadow-offset-y" min="-20" max="20" value="5"><br>
-                    <label for="title-font-size">Title Font Size:</label>
-                    <select id="title-font-size">
-                        <option value="96" selected>96</option>
-                        <option value="72">72</option>
-                        <option value="48">48</option>
-                        <option value="36">36</option>
-                        <option value="24">24</option>
-                        <option value="18">18</option>
-                        <option value="16">16</option>
-                        <option value="14">14</option>
-                        <option value="12">12</option>
-                    </select><br>
-                    <label for="author-font-size">Author Font Size:</label>
-                    <select id="author-font-size">
-                        <option value="96">96</option>
-                        <option value="72">72</option>
-                        <option value="48" selected>48</option>
-                        <option value="36">36</option>
-                        <option value="24">24</option>
-                        <option value="18">18</option>
-                        <option value="16">16</option>
-                        <option value="14">14</option>
-                        <option value="12">12</option>
-                    </select><br>
-                    <label for="font-color">Font Color:</label>
-                    <input type="color" id="font-color" value="#ffffff"><br>
-                    <label for="title-x">Title X:</label>
-                    <input type="range" id="title-x" min="0" max="100" value="50"><br>
-                    <label for="title-y">Title Y:</label>
-                    <input type="range" id="title-y" min="0" max="100" value="50"><br>
-                    <label for="author-x">Author X:</label>
-                    <input type="range" id="author-x" min="0" max="100" value="50"><br>
-                    <label for="author-y">Author Y:</label>
-                    <input type="range" id="author-y" min="0" max="100" value="70"><br>
-                    <button id="create-cover">Create Cover</button>
-                </form>
-            </div>
-            <div class="preview">
-                <img id="image-preview">
-            </div>
-        </main>
+                    <input type="range" id="shadow-offset-y" min="-20" max="20" value="5"></p>
+            
+
+                    <h2>Create the cover</h2>
+                    <button id="create-cover">Create Cover</button> 
+                    <button id="download-cover" disabled>Download Cover</button>
+                    </form>
+            </section>
+
+            <section id="preview">
+                <div id="image-preview"></div>
+            </section>
+        </div>
+
         <footer>
-            <p>Created by [Your Name] | Credits: [List of credits]</p>
+            <p>EPUB Book Cover Creator - A project licensed under MIT available on <a href="https://github.com/Wivik/book-cover-generator" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path></svg></a></p>
+            <p>Fonts license :<br>
+                - <a href="https://www.fontsquirrel.com/fonts/comfortaa" target="_blank" rel="noopener">Comfortaa </a> SIL Open Font License v1.10<br>
+                - <a href="https://www.fontsquirrel.com/fonts/droid-sans" target="_blank" rel="noopener">Droid Sans</a> Apache License 2.0<br>
+                - <a href="https://www.fontsquirrel.com/fonts/cantarell" target="_blank" rel="noopener">Cantarell</a> SIL Open Font License v1.10<br>
+                - <a href="https://www.fontsquirrel.com/fonts/crimson" target="_blank" rel="noopener">Crimson</a> SIL Open Font License v1.10<br>
+            </p>
         </footer>
-        <script src="script.js"></script>
     </body>
 </html>

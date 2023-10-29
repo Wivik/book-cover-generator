@@ -1,22 +1,101 @@
 @font-face {
     font-family: 'Droid Sans Regular';
-    src: url('DroidSans-webfont.woff') format('woff');
+    src: url('fonts/DroidSans-webfont.woff') format('woff');
 }
 
 @font-face {
-font-family: 'Fira Sans';
-src: url('fira-sans.ttf') format('truetype');
+    font-family: 'Crimson Roman';
+    src: url('fonts/Crimson-Roman.otf.otf') format('otf');
 }
 
 @font-face {
-font-family: 'Cantarell Regular';
-src: url('cantarell-regular.ttf') format('truetype');
+    font-family: 'Cantarell Regular';
+    src: url('fonts/Cantarell-Regular.ttf') format('truetype');
 }
 
 @font-face {
-font-family: 'Comfortaa Regular';
-src: url('comfortaa-regular.ttf') format('truetype');
+    font-family: 'Comfortaa Regular';
+    src: url('fonts/Comfortaa_Regular.ttf') format('truetype');
 }
+
+:root {
+    --header-bg-color: #2E3440;
+
+    --header-text-color: #ECEFF4;
+    --params--bg-color: #D8DEE9;
+    --params-button-bg-color: #2E3440;
+    --params-button-border-color: #4C566A;
+    --footer-bg-color: #ECEFF4;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Droid Sans Regular';
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    padding: 1rem;
+}
+
+#content {
+    display: flex;
+    flex-direction: row;
+}
+
+#params {
+    display: flex;
+    flex: 1;
+    max-width: 35%;
+    padding: 1rem;
+    background-color: var(--params--bg-color);
+}
+
+#params label {
+    margin: 0.1rem;
+}
+
+#params button {
+    padding: 1rem;
+}
+
+input, option, select {
+    font-size: larger;
+}
+
+input.font-size {
+    padding: 0.2rem;
+    width: 50px;
+}
+
+select {
+    width: 250px;
+}
+
+#params h2 {
+    background-color: #ECEFF4;
+    padding: 0.1rem;
+}
+
+#preview {
+    display: flex;
+    flex: 1;
+    padding: 1rem;
+}
+
+footer {
+    background-color: var(--footer-bg-color);
+    padding: 1rem;
+}
+
+
 /* body {
 display: flex;
 flex-direction: row;

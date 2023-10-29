@@ -32,6 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const image = new Image();
         image.src = reader.result;
         image.addEventListener('load', () => {
+            if (image.width < 1000 && image.height < 625) {
+                alert('Warning: Image size is below 1000x625 pixels. This cover won\'t be accepted by Amazon KDP.\n Imported image size :\nWidth: '+ image.width + 'px\n Height: ' + image.height + 'px');
+            }
         // Create a canvas element and draw the image on it
         const canvas = document.createElement('canvas');
         const context = canvas.getContext('2d');
@@ -44,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const textContext = textCanvas.getContext('2d');
         textCanvas.width = canvas.width;
         textCanvas.height = canvas.height;
-        textContext.font = `bold ${titleFontSizeSelect.value}px 'My Custom Font', sans-serif`;
+        textContext.font = `bold ${titleFontSizeSelect.value}px ${fontSelect.value}`;
         textContext.fillStyle = fontColorInput.value;
         textContext.textAlign = 'center';
         textContext.shadowColor = shadowColorInput.value;
@@ -113,4 +116,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     reader.readAsDataURL(file);
     });
+
+    const titleXValue = document.getElementById('title-x-value');
+    const titleYValue = document.getElementById('title-y-value');
+    const authorXValue = document.getElementById('author-x-value');
+    const authorYValue = document.getElementById('author-y-value');
+    
+    titleXInput.addEventListener('input', () => {
+        titleXValue.textContent = titleXInput.value;
+    });
+    titleYInput.addEventListener('input', () => {
+        titleYValue.textContent = titleYInput.value;
+    });
+    authorXInput.addEventListener('input', () => {
+        authorXValue.textContent = authorXInput.value;
+    });
+    authorYInput.addEventListener('input', () => {
+        authorYValue.textContent = authorYInput.value;
+    });
+    
+
 });
+
