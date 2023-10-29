@@ -51,10 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         textContext.shadowBlur = shadowBlurInput.value;
         textContext.shadowOffsetX = shadowOffsetXInput.value;
         textContext.shadowOffsetY = shadowOffsetYInput.value;
-        textContext.fillText(titleInput.value, textCanvas.width * (titleXInput.value / 100), textCanvas.height * (titleYInput.value / 100));
-        textContext.font = `bold ${authorFontSizeSelect.value}px 'My Custom Font', sans-serif`;
-        textContext.fillStyle = fontColorInput.value;
-        textContext.fillText(authorInput.value, textCanvas.width * (authorXInput.value / 100), textCanvas.height * (authorYInput.value / 100));
+
 
         // Split the title text into multiple lines if it exceeds a certain width
         const maxWidth = canvas.width * 0.8; // 80% of the canvas width
@@ -73,18 +70,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         titleLines.push(titleLine);
 
-        // // Draw the title text on the text canvas
-        // const lineHeight = titleFontSizeSelect.value * 1.2; // 20% extra space between lines
-        // const titleY = textCanvas.height * (titleYInput.value / 100) - ((titleLines.length - 1) * lineHeight) / 2;
-        // for (let i = 0; i < titleLines.length; i++) {
-        //     const line = titleLines[i];
-        //     textContext.fillText(line, textCanvas.width * (titleXInput.value / 100), titleY + i * lineHeight);
-        // }
+        // Draw the title text on the text canvas
+        const lineHeight = titleFontSizeSelect.value * 1.2; // 20% extra space between lines
+        const titleY = textCanvas.height * (titleYInput.value / 100) - ((titleLines.length - 1) * lineHeight) / 2;
+        for (let i = 0; i < titleLines.length; i++) {
+            const line = titleLines[i];
+            textContext.fillText(line, textCanvas.width * (titleXInput.value / 100), titleY + i * lineHeight);
+        }
 
-        // // Draw the author text on the text canvas
-        // textContext.font = `bold ${authorFontSizeSelect.value}px ${fontSelect.value}`;
-        // textContext.fillStyle = fontColorInput.value;
-        // textContext.fillText(authorInput.value, textCanvas.width * (authorXInput.value / 100), textCanvas.height * (authorYInput.value / 100));
+        // Draw the author text on the text canvas
+        textContext.font = `bold ${authorFontSizeSelect.value}px ${fontSelect.value}`;
+        textContext.fillStyle = fontColorInput.value;
+        textContext.fillText(authorInput.value, textCanvas.width * (authorXInput.value / 100), textCanvas.height * (authorYInput.value / 100));
 
         // Create a modified canvas element and draw the text canvas and image canvas on it
         const modifiedCanvas = document.createElement('canvas');
