@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'Droid Sans Regular';
+    src: url('DroidSans-webfont.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Fira Sans';
+src: url('fira-sans.ttf') format('truetype');
+}
+
+@font-face {
+font-family: 'Cantarell Regular';
+src: url('cantarell-regular.ttf') format('truetype');
+}
+
+@font-face {
+font-family: 'Comfortaa Regular';
+src: url('comfortaa-regular.ttf') format('truetype');
+}
+/* body {
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+align-items: center;
+height: 100vh;
+margin: 0;
+padding: 0;
+}
+form {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+margin: 0 20px;
+}
+#image-preview {
+width: 50%;
+height: auto;
+margin: 0 20px;
+} */

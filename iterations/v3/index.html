@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>EPUB Book Cover Creator</title>
+  </head>
+  <body>
+    <h1>EPUB Book Cover Creator</h1>
+    <form>
+      <label for="image">Image:</label>
+      <input type="file" id="image" accept="image/*"><br>
+      <label for="title">Title:</label>
+      <input type="text" id="title"><br>
+      <label for="author">Author:</label>
+      <input type="text" id="author"><br>
+      <label for="font">Font:</label>
+      <select id="font">
+        <option value="Arial">Arial</option>
+        <option value="Helvetica">Helvetica</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Verdana">Verdana</option>
+      </select><br>
+      <label for="font-size">Font Size:</label>
+      <select id="font-size">
+        <option value="18">18</option>
+        <option value="20">20</option>
+        <option value="24">24</option>
+        <option value="28">28</option>
+        <option value="32">32</option>
+      </select><br>
+      <button id="create-cover">Create Cover</button>
+      <button id="download-cover">Download Cover</button>
+    </form>
+    <div id="image-preview"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>EPUB Book Cover Creator</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 0 20px;
+      }
+      #image-preview {
+        width: 50%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label for="image">Image:</label>
+      <input type="file" id="image" accept="image/*"><br>
+      <label for="title">Title:</label>
+      <input type="text" id="title"><br>
+      <label for="author">Author:</label>
+      <input type="text" id="author"><br>
+      <label for="font">Font:</label>
+      <select id="font">
+        <option value="Arial">Arial</option>
+        <option value="Helvetica">Helvetica</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Times">Times</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Courier">Courier</option>
+        <option value="Verdana">Verdana</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Palatino">Palatino</option>
+        <option value="Garamond">Garamond</option>
+        <option value="Bookman">Bookman</option>
+        <option value="Comic Sans MS">Comic Sans MS</option>
+        <option value="Trebuchet MS">Trebuchet MS</option>
+        <option value="Arial Black">Arial Black</option>
+        <option value="Impact">Impact</option>
+        <option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+        <option value="Tahoma">Tahoma</option>
+        <option value="Lucida Console">Lucida Console</option>
+      </select><br>
+      <label for="font-size">Font Size:</label>
+      <select id="font-size">
+        <option value="48">48</option>
+        <option value="36">36</option>
+        <option value="24">24</option>
+        <option value="18">18</option>
+        <option value="16">16</option>
+        <option value="14">14</option>
+        <option value="12">12</option>
+      </select><br>
+      <label for="font-color">Font Color:</label>
+      <input type="color" id="font-color" value="#ffffff"><br>
+      <label for="background-color">Background Color:</label>
+      <input type="color" id="background-color" value="#000000"><br>
+      <label for="title-x">Title X:</label>
+      <input type="range" id="title-x" min="0" max="100" value="50"><br>
+      <label for="title-y">Title Y:</label>
+      <input type="range" id="title-y" min="0" max="100" value="50"><br>
+      <label for="author-x">Author X:</label>
+      <input type="range" id="author-x" min="0" max="100" value="50"><br>
+      <label for="author-y">Author Y:</label>
+      <input type="range" id="author-y" min="0" max="100" value="70"><br>
+      <button id="create-cover">Create Cover</button>
+      <button id="download-cover" disabled>Download Cover</button>
+    </form>
+    <div id="image-preview"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

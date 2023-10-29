@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>EPUB Book Cover Creator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>EPUB Book Cover Creator</h1>
+            <p>Enter the book title and author, select a font and adjust the settings to create a custom book cover.</p>
+        </header>
+        <main>
+            <div class="parameters">
+                <form>
+                    <label for="image">Image:</label>
+                    <input type="file" id="image" accept="image/*"><br>
+                    <label for="title">Title:</label>
+                    <input type="text" id="title"><br>
+                    <label for="author">Author:</label>
+                    <input type="text" id="author"><br>
+                    <label for="font">Font:</label>
+                    <input type="text" id="font" list="font-list"><br>
+                    <datalist id="font-list">
+                        <option value="Arial">
+                        <option value="Droid Sans Regular">
+                        <option value="Fira Sans">
+                        <option value="Cantarell Regular">
+                        <option value="Comfortaa Regular">
+                        <option value="Times New Roman">
+                    </datalist>
+                    <label for="shadow-color">Shadow Color:</label>
+                    <input type="color" id="shadow-color" value="#000000"><br>
+                    <label for="shadow-blur">Shadow Blur:</label>
+                    <input type="range" id="shadow-blur" min="0" max="20" value="10"><br>
+                    <label for="shadow-offset-x">Shadow Offset X:</label>
+                    <input type="range" id="shadow-offset-x" min="-20" max="20" value="5"><br>
+                    <label for="shadow-offset-y">Shadow Offset Y:</label>
+                    <input type="range" id="shadow-offset-y" min="-20" max="20" value="5"><br>
+                    <label for="title-font-size">Title Font Size:</label>
+                    <select id="title-font-size">
+                        <option value="96" selected>96</option>
+                        <option value="72">72</option>
+                        <option value="48">48</option>
+                        <option value="36">36</option>
+                        <option value="24">24</option>
+                        <option value="18">18</option>
+                        <option value="16">16</option>
+                        <option value="14">14</option>
+                        <option value="12">12</option>
+                    </select><br>
+                    <label for="author-font-size">Author Font Size:</label>
+                    <select id="author-font-size">
+                        <option value="96">96</option>
+                        <option value="72">72</option>
+                        <option value="48" selected>48</option>
+                        <option value="36">36</option>
+                        <option value="24">24</option>
+                        <option value="18">18</option>
+                        <option value="16">16</option>
+                        <option value="14">14</option>
+                        <option value="12">12</option>
+                    </select><br>
+                    <label for="font-color">Font Color:</label>
+                    <input type="color" id="font-color" value="#ffffff"><br>
+                    <label for="title-x">Title X:</label>
+                    <input type="range" id="title-x" min="0" max="100" value="50"><br>
+                    <label for="title-y">Title Y:</label>
+                    <input type="range" id="title-y" min="0" max="100" value="50"><br>
+                    <label for="author-x">Author X:</label>
+                    <input type="range" id="author-x" min="0" max="100" value="50"><br>
+                    <label for="author-y">Author Y:</label>
+                    <input type="range" id="author-y" min="0" max="100" value="70"><br>
+                    <button id="create-cover">Create Cover</button>
+                </form>
+            </div>
+            <div class="preview">
+                <img id="image-preview">
+            </div>
+        </main>
+        <footer>
+            <p>Created by [Your Name] | Credits: [List of credits]</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
