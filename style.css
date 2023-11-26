@@ -5,8 +5,36 @@
 
 @font-face {
     font-family: 'Crimson Roman';
-    src: url('fonts/Crimson-Roman.otf.otf') format('otf');
+    src: url('fonts/Crimson-Roman.otf') format('opentype');
 }
+
+@font-face {
+    font-family: 'FiraCode Light';
+    src: url('fonts/FiraCode-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'FiraCode Regular';
+    src: url('fonts/FiraCode-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Numans Regular';
+    src: url('fonts/Numans-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Titillium Regular';
+    src: url('fonts/Titillium-Regular.otf') format('opentype');
+}
+
+
+
+@font-face {
+    font-family: 'Cascadia';
+    src: url('fonts/Cascadia.ttf') format('truetype');
+}
+
 
 @font-face {
     font-family: 'Cantarell Regular';
@@ -17,6 +45,35 @@
     font-family: 'Comfortaa Regular';
     src: url('fonts/Comfortaa_Regular.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'Architects Daughter';
+    src: url('fonts/ArchitectsDaughter.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: '1942';
+    src: url('fonts/1942.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'Advent Pro Regular';
+    src: url('fonts/adventpro-regular.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'Amble Regular';
+    src: url('fonts/Amble-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto Regular';
+    src: url('fonts/Roboto-Regular.ttf') format('truetype');
+}
+
 
 :root {
     --header-bg-color: #2E3440;
